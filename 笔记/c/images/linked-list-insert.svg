@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 700 34px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #0f172a; }
+      .step { font: 700 24px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #1e293b; }
+      .code { font: 600 22px Consolas, monospace; fill: #9a3412; }
+      .label { font: 600 19px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #475569; }
+      .value { font: 700 24px Consolas, monospace; fill: #0f172a; text-anchor: middle; dominant-baseline: middle; }
+      .field { font: 600 16px Consolas, monospace; fill: #475569; text-anchor: middle; dominant-baseline: middle; }
+      .normal { fill: #dbeafe; stroke: #2563eb; stroke-width: 3; }
+      .new { fill: #ffedd5; stroke: #ea580c; stroke-width: 3; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .arrow { fill: none; stroke: #2563eb; stroke-width: 4; marker-end: url(#arrow-blue); }
+      .new-arrow { fill: none; stroke: #ea580c; stroke-width: 4; marker-end: url(#arrow-orange); }
+      .old-arrow { fill: none; stroke: #94a3b8; stroke-width: 3; stroke-dasharray: 8 8; marker-end: url(#arrow-blue); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="820" fill="#f8fafc"/>
+  <text x="700" y="52" class="title" text-anchor="middle">单链表：在节点 B 后插入新节点 N</text>
+
+  <g transform="translate(40,82)">
+    <rect width="1320" height="205" rx="18" class="panel" filter="url(#shadow)"/>
+    <text x="28" y="38" class="step">1. 插入前：先创建节点 N，但还没有接入链表</text>
+    <text x="93" y="123" class="label">head</text>
+    <path d="M 135 117 L 200 117" class="arrow"/>
+    <g transform="translate(205,82)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">10</text><text x="130" y="35" class="field">next</text></g>
+    <path d="M 365 117 L 460 117" class="arrow"/>
+    <g transform="translate(465,82)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">20</text><text x="130" y="35" class="field">next</text></g>
+    <text x="545" y="73" class="label" text-anchor="middle">B</text>
+    <path d="M 625 117 L 720 117" class="arrow"/>
+    <g transform="translate(725,82)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">30</text><text x="130" y="35" class="field">NULL</text></g>
+    <g transform="translate(1030,82)"><rect width="160" height="70" rx="10" class="new"/><line x1="100" y1="0" x2="100" y2="70" stroke="#ea580c" stroke-width="3"/><text x="50" y="35" class="value">99</text><text x="130" y="35" class="field">next</text></g>
+    <text x="1110" y="73" class="label" text-anchor="middle">新节点 N</text>
+  </g>
+
+  <g transform="translate(40,307)">
+    <rect width="1320" height="205" rx="18" class="panel" filter="url(#shadow)"/>
+    <text x="28" y="38" class="step">2. 先保存后半段链表：</text>
+    <text x="342" y="38" class="code">N-&gt;next = B-&gt;next;</text>
+    <text x="93" y="123" class="label">head</text>
+    <path d="M 135 117 L 200 117" class="arrow"/>
+    <g transform="translate(205,82)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">10</text><text x="130" y="35" class="field">next</text></g>
+    <path d="M 365 117 L 460 117" class="arrow"/>
+    <g transform="translate(465,82)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">20</text><text x="130" y="35" class="field">next</text></g>
+    <text x="545" y="73" class="label" text-anchor="middle">B</text>
+    <path d="M 625 117 L 720 117" class="old-arrow"/>
+    <g transform="translate(725,82)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">30</text><text x="130" y="35" class="field">NULL</text></g>
+    <g transform="translate(1030,82)"><rect width="160" height="70" rx="10" class="new"/><line x1="100" y1="0" x2="100" y2="70" stroke="#ea580c" stroke-width="3"/><text x="50" y="35" class="value">99</text><text x="130" y="35" class="field">next</text></g>
+    <text x="1110" y="73" class="label" text-anchor="middle">N</text>
+    <path d="M 1030 147 C 970 185, 860 185, 805 156" class="new-arrow"/>
+  </g>
+
+  <g transform="translate(40,532)">
+    <rect width="1320" height="245" rx="18" class="panel" filter="url(#shadow)"/>
+    <text x="28" y="38" class="step">3. 再让 B 指向 N：</text>
+    <text x="268" y="38" class="code">B-&gt;next = N;</text>
+    <text x="28" y="72" class="label">顺序不能反：先接后半段，再改 B 的 next，才不会丢失节点 30。</text>
+    <text x="93" y="160" class="label">head</text>
+    <path d="M 135 154 L 200 154" class="arrow"/>
+    <g transform="translate(205,119)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">10</text><text x="130" y="35" class="field">next</text></g>
+    <path d="M 365 154 L 460 154" class="arrow"/>
+    <g transform="translate(465,119)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">20</text><text x="130" y="35" class="field">next</text></g>
+    <text x="545" y="110" class="label" text-anchor="middle">B</text>
+    <path d="M 625 154 L 720 154" class="new-arrow"/>
+    <g transform="translate(725,119)"><rect width="160" height="70" rx="10" class="new"/><line x1="100" y1="0" x2="100" y2="70" stroke="#ea580c" stroke-width="3"/><text x="50" y="35" class="value">99</text><text x="130" y="35" class="field">next</text></g>
+    <text x="805" y="110" class="label" text-anchor="middle">N</text>
+    <path d="M 885 154 L 980 154" class="new-arrow"/>
+    <g transform="translate(985,119)"><rect width="160" height="70" rx="10" class="normal"/><line x1="100" y1="0" x2="100" y2="70" stroke="#2563eb" stroke-width="3"/><text x="50" y="35" class="value">30</text><text x="130" y="35" class="field">NULL</text></g>
+    <text x="700" y="224" class="label" text-anchor="middle">最终链表：10 → 20 → 99 → 30 → NULL</text>
+  </g>
+</svg>
